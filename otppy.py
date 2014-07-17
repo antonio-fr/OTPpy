@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 
 
 import hmac_OTP
@@ -30,8 +29,8 @@ class OTP:
 	
 	def Truncate(self, hmac_digest, digits):
 		assert digits<9
-		ob = ord(hmac_digest[-1])& 15
-		token_base = struct.unpack('>I', hmac_digest[ob:ob + 4])[0] & 0x7fffffff
+		iob = ord(hmac_digest[-1])& 15
+		token_base = struct.unpack('>I', hmac_digest[iob:iob + 4])[0] & 2147483647
 		token = token_base % 10**digits
 		fmt = '{:0'+chr(digits+48)+'d}'
 		return fmt.format(token)

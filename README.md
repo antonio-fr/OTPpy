@@ -19,7 +19,8 @@ Example :
     totp = otp.TOTP() < Return [TOTP, Remaining Time in seconds]
     print "TOTP Code :", totp[0]
 
-## Use
+
+## Using library
 
 Copy "otppy.py" and "hmac_OTP.py" in your working directory.
 run otppy.py to check if everything is OK ("Tests Passed").
@@ -31,6 +32,25 @@ Form more details: see code
 
 Test vectors from standards included in otppy run when
 running otppy.py alone (as main).
+
+
+
+## GUI Example
+
+A basic GUI for TOTP is provided. GUI uses Tk included in Python.
+User have to edit "user.dat" file with his credentials:
+CSV 1 line per service: ServiceName,Base32Seed,HashAlg,Digits
+
+HashAlg is either : sha1, sha256 or sha512
+Digits is mostly: 6 or 8
+For Google Auth, use sha1 and 6 digits
+See existing example file user.dat provided
+
+just launch GUI.pyw
+TOTPs are refreshed automatically.
+Text is red when remaining time is below 5 seconds.
+
+
 
 
 Licence :
