@@ -2,6 +2,7 @@ OTPpy
 =====
 
 OTP library for Python 2.x : HOTP and TOTP ( RFC4226 &amp; RFC6238 )
+
 Easy to use OTP generator : counter-based or time-based
 
 * Fully compatible with standards
@@ -38,16 +39,25 @@ running otppy.py alone (as main).
 ## GUI Example
 
 A basic GUI for TOTP is provided. GUI uses Tk included in Python.
+
 User have to edit "user.dat" file with his credentials:
+
 CSV 1 line per service: ServiceName,Base32Seed,HashAlg,Digits
 
+
 HashAlg is either : sha1, sha256 or sha512
+
 Digits is mostly: 6 or 8
+
 For Google Auth, use sha1 and 6 digits
+
 See existing example file user.dat provided
 
+
 just launch GUI.pyw
+
 TOTPs are refreshed automatically.
+
 Text is red when remaining time is below 5 seconds.
 
 
